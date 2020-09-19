@@ -1,3 +1,13 @@
+//Inquier to collect user input
+let inquier = require("inquirer")
+let fs = require("fs")
+let util = require("util");
+const inquirer = require("inquirer");
+
+
+
+
+
 // array of questions for user
 const questions = [{
 
@@ -9,11 +19,6 @@ const questions = [{
         type: "input",
         content: "description",
         message: "Describe your project?"
-    },
-    {
-        type: "input",
-        content: "tableOfContents",
-        message: "Create a table of contents?"
     },
     {
         type: "input",
@@ -45,6 +50,16 @@ const questions = [{
         type: "input",
         content: "badges",
         message: "Do you wish to include any badges?"
+    },
+    {
+        type: "input",
+        content: "githubUsername",
+        message: "What is your Github username?"
+    },
+    {
+        type: "input",
+        content: "email",
+        message: "What is your email address?"
     }
 
 ];
@@ -54,6 +69,10 @@ function writeToFile(fileName, data) {}
 
 // function to initialize program
 function init() {
+    inquirer.prompt(questions).then(function(response) {
+
+
+    })
 
 }
 

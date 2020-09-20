@@ -3,6 +3,8 @@ let inquier = require("inquirer")
 let fs = require("fs")
 let util = require("util");
 const inquirer = require("inquirer");
+let markDown = require("./utils/generateMarkdown");
+const { error } = require("console");
 
 
 
@@ -12,65 +14,75 @@ const inquirer = require("inquirer");
 const questions = [{
 
         type: "input",
-        content: "title",
+        name: "title",
         message: "What is the title of your project?"
     },
     {
         type: "input",
-        content: "description",
+        name: "description",
         message: "Describe your project?"
     },
     {
         type: "input",
-        content: "installation",
+        name: "installation",
         message: "What are the steps required to install your project step-by-step?"
     },
     {
         type: "input",
-        content: "usage",
+        name: "usage",
         message: "What are the instructions and examples for how to use your project?"
     },
     {
         type: "input",
-        content: "contributing",
+        name: "contributing",
         message: "Did you have any collaborators, if so what are their Github profiles?"
 
     },
     {
         type: "input",
-        content: "license",
+        name: "license",
         message: "Which license do you wish to include?"
     },
     {
         type: "input",
-        content: "tests",
+        name: "tests",
         message: "What tests should be run for your application?"
     },
     {
         type: "input",
-        content: "badges",
+        name: "badges",
         message: "Do you wish to include any badges?"
     },
     {
         type: "input",
-        content: "githubUsername",
+        name: "githubUsername",
         message: "What is your Github username?"
     },
     {
         type: "input",
-        content: "email",
+        name: "email",
         message: "What is your email address?"
     }
 
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {}
+//uses fs to write to the generate markdown
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, markDown(data), function(err) {
+        if (err) {
+            console.log("Error :(")
+        } else {
+            console.log("succes! :D")
+        }
+    })
+
+}
 
 // function to initialize program
 function init() {
-    inquirer.prompt(questions).then(function(response) {
-
+    inquirer.prompt(questions).then(function(data) {
+        writeToFile("README.md", data);
 
     })
 

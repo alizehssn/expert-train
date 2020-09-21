@@ -29,6 +29,12 @@ const questions = [{
     },
     {
         type: "input",
+        name: "tools",
+        message: "What frameworks did you use to build your project?"
+
+    },
+    {
+        type: "input",
         name: "usage",
         message: "What are the instructions and examples for how to use your project?"
     },

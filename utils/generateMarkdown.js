@@ -10,24 +10,25 @@ function generateMarkdown(data) {
 
     ## **Usage**:
     ${data.usage}
+    [![video explanation of project](${data.usageMedia})](${data.usageMedia} "Walkthrough Demonstration")
+    
 
     ## **Built With**
     ${data.tools}
 
-    ##**Contributing:**
-    ${data.contributing}
-
-    ## **Tests:**
+    ## **Tests**
     ${data.tests}
 
-    ## Badges:
+    ## Badges
     ${data.badges}
 
-    ## **Contact Information:**
-    Github Username: ${data.githubUsername}
-    Email: ${data.email}
+    ##**Credits**
+    ${data.contributing}
+    ### **Contact Information:**
+    [Github Username](${data.githubUsername})
+    [Email](${data.email})
 
-    ## MIT License:
+    ## MIT License
     
     Copyright (c) 2020 Alize Hassan
     

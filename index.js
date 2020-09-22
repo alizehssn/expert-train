@@ -6,10 +6,6 @@ const inquirer = require("inquirer");
 let markDown = require("./utils/generateMarkdown");
 const { error } = require("console");
 
-
-
-
-
 // array of questions for user
 const questions = [{
 
@@ -25,7 +21,7 @@ const questions = [{
     {
         type: "input",
         name: "descriptionImg",
-        message: "Insert Image Link for Description"
+        message: "Insert Image Link for Description or Leave blank if no image"
 
     },
     {
@@ -46,8 +42,13 @@ const questions = [{
     },
     {
         type: "input",
+        name: "usageMedia",
+        message: "Provide any images or video links, if possible, to instruct usage"
+    },
+    {
+        type: "input",
         name: "contributing",
-        message: "Did you have any collaborators, if so what are their Github profiles?"
+        message: "Did you have any collaborators, if so what are their Github profiles, but if not what is your name?"
 
     },
     {

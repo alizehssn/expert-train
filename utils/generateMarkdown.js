@@ -3,6 +3,7 @@
 function generateMarkdown(data) {
     return `# :page_with_curl: **${data.title}** :page_with_curl:
     ${data.description}
+    ![${data.descriptionImg}]
 
     ## **Getting Started**
     ${data.installation}

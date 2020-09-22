@@ -24,6 +24,12 @@ const questions = [{
     },
     {
         type: "input",
+        name: "descriptionImg",
+        message: "Insert Image Link for Description"
+
+    },
+    {
+        type: "input",
         name: "installation",
         message: "What are the steps required to install your project step-by-step?"
     },
